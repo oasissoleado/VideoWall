@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Dashboard {
+  id        String   @id @default(cuid())
+  name      String
+  url       String
+  duration  Int      @default(30)
+  order     Int      @default(0)
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model DisplayConfig {
+  id               String   @id @default("singleton")
+  resolution       String   @default("1920x1080")
+  zoom             Int      @default(100)
+  fallbackImageUrl String?
+  refreshInterval  Int      @default(300)
+  updatedAt        DateTime @updatedAt
+}

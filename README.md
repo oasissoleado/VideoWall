@@ -1,5 +1,3 @@
-# VideoWall
-Projecto VideoWall Stack type script
 # VideoWall Dashboard System
 
 Panel de administración + página `/display` para rotar dashboards de Power BI en un video wall LG Supersign CMS, sobre red local con HTTPS.

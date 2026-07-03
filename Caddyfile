@@ -1,0 +1,10 @@
+# Cambia esta IP por la del mini PC en la red local.
+https://10.10.52.185 {
+  tls internal
+  reverse_proxy app:3000
+}
+
+# Acceso también por http (opcional, solo intranet)
+http://:80 {
+  reverse_proxy app:3000
+}
